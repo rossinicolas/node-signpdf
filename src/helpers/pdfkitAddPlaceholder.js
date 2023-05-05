@@ -26,13 +26,13 @@ const pdfkitAddPlaceholder = ({
         Type: 'Sig',
         Filter: 'Adobe.PPKLite',
         SubFilter: subFilter,
+        Contents: Buffer.from(String.fromCharCode(0).repeat(signatureLength)),
         ByteRange: [
             0,
             byteRangePlaceholder,
             byteRangePlaceholder,
             byteRangePlaceholder,
         ],
-        Contents: Buffer.from(String.fromCharCode(0).repeat(signatureLength)),
         Reason: new String(reason), // eslint-disable-line no-new-wrappers
         M: new Date(),
         ContactInfo: new String(contactInfo), // eslint-disable-line no-new-wrappers
